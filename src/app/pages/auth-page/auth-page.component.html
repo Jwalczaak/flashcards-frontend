@@ -1,5 +1,9 @@
 <div class="page-container">
   <section class="login-section">
     <header class="login-header">Login</header>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <app-input></app-input>
+      <app-shared-button [type]="'submit'"></app-shared-button>
+    </form>
   </section>
 </div>
