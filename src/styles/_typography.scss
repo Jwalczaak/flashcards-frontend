@@ -3,17 +3,26 @@
   background-color: var(--white-1);
 }
 
-.text-value-xs {
+.text-value-sm {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+}
+
+.text-value-sm-strong {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 600;
 }
 
 .text-value-md {
   font-size: 1.8rem;
+  line-height: 1.8rem;
   font-weight: 500;
-  padding-top: 10px;
 }
 
 .text-value-md-strong {
   font-size: 1.8rem;
+  line-height: 1.8rem;
   font-weight: 600;
-  padding-top: 10px;
 }

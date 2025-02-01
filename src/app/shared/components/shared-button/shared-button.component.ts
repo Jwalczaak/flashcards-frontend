@@ -1,4 +1,5 @@
 import { Component, input, output } from '@angular/core';
+import { ButtonType } from '../../types/button-type';
 
 @Component({
   selector: 'app-shared-button',
@@ -7,7 +8,7 @@ import { Component, input, output } from '@angular/core';
   styleUrl: './shared-button.component.scss',
 })
 export class SharedButtonComponent {
-  type = input.required<string>();
+  buttonType = input.required<ButtonType>();
   clickButton = output<void>();
 
   onButtonClick(): void {

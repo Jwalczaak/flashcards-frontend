@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { InputType } from 'zlib';
 
 @Component({
   selector: 'app-input',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
 })
-export class InputComponent {}
+export class InputComponent {
+  inputType = input.required<InputType>();
+}
