@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Component, input } from '@angular/core';
-import { InputType } from 'zlib';
-
+import { InputType } from '../../types/input';
 @Component({
   selector: 'app-input',
   imports: [],
@@ -9,4 +9,7 @@ import { InputType } from 'zlib';
 })
 export class InputComponent {
   inputType = input.required<InputType>();
+
+  iconName = input.required<string>();
+  placeholder = input.required<string>();
 }

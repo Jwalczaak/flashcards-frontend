@@ -1,1 +1,4 @@
-<input [type]="inputType()" class="input" />
+<div class="input-wrapper">
+  <i class="material-icons icon">{{ iconName() }}</i>
+  <input [type]="inputType()" class="input" [placeholder]="placeholder()" />
+</div>
