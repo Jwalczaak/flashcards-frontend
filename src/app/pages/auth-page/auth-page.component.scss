@@ -1,3 +1,5 @@
+@import "../../../styles/mixins";
+
 * {
   font-family: Roboto, "Open Sans", sans-serif;
 }
@@ -11,24 +13,21 @@
 
 .login {
   &-section {
+    @include flexbox(column, flex-start, center, 0, 20px);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 450px;
     height: 75%;
-    border-radius: 8px;
-    background-color: var(--white-1);
   }
 
-  //Add card to topologhy Refactor styles for global styles varibales,colors, mixins, etc.
-
-  &-header {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.8rem;
-    font-weight: 600;
-    padding-top: 10px;
+  &-form {
+    @include flexbox(column, space-between, center, 0, 20px);
   }
+}
+
+.input-container {
+  width: 20rem;
+  height: 2rem;
 }

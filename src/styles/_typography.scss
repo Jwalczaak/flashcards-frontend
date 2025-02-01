@@ -1,0 +1,19 @@
+.card {
+  border-radius: var(--border-radius-md);
+  background-color: var(--white-1);
+}
+
+.text-value-xs {
+}
+
+.text-value-md {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+.text-value-md-strong {
+  font-size: 1.8rem;
+  font-weight: 600;
+  padding-top: 10px;
+}

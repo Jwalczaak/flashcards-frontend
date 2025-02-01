@@ -1,9 +1,9 @@
 <div class="page-container">
-  <section class="login-section">
-    <header class="login-header">Login</header>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <app-input></app-input>
-      <app-shared-button [type]="'submit'"></app-shared-button>
+  <section class="card login-section">
+    <header class="text-value-md-strong login-header">Login</header>
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="input-container"><app-input></app-input></div>
+      <div class="button-container"><app-shared-button [type]="'submit'"></app-shared-button></div>
     </form>
   </section>
 </div>
