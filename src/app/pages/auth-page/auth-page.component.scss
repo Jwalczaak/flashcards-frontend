@@ -7,7 +7,9 @@
 .page-container {
   width: 100vw;
   height: 100vh;
-  background-color: var(--white-1);
+
+  background-color: rgba(247, 247, 247, 1);
+  background-image: linear-gradient(90deg, rgba(247, 247, 247, 1) 79%, rgba(255, 255, 255, 1) 100%);
 }
 
 .form-container {
@@ -25,13 +27,13 @@
     width: 1200px;
     height: 75%;
     transform: translate(-50%, -50%);
-    -webkit-box-shadow: -12px 0px 20px -3px rgba(45, 122, 198, 1);
-    -moz-box-shadow: -12px 0px 20px -3px rgba(45, 122, 198, 1);
-    box-shadow: -12px 0px 20px -3px rgba(45, 122, 198, 1);
+    -webkit-box-shadow: -10px 0px 20px 10px #a1c4fd;
+    -moz-box-shadow: -10px 0px 20px 10px #a1c4fd;
+    box-shadow: -10px 0px 20px 10px #a1c4fd;
   }
 
   &-form {
-    @include flexbox(column, space-between, center, 0, 20px);
+    @include flexbox(column, space-between, center, 0, 30px);
     width: 60%;
   }
 
@@ -47,11 +49,9 @@
     position: relative;
     width: 40%;
     height: 100%;
-    background-color: blue;
-    background: hsla(217, 100%, 50%, 1);
-    background: linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
-    background: -moz-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);
+    background-image: linear-gradient(120deg, var(--blue-1) 0%, var(--blue-2) 100%);
+    border-top-right-radius: var(--border-radius-md);
+    border-bottom-right-radius: var(--border-radius-md);
   }
 
   &-container-text {
@@ -68,7 +68,25 @@
   }
 }
 
-.input-container {
-  width: 70%;
-  height: 3rem;
+.password {
+  &-container {
+    @include flexbox(column, flex-start, flex-end, 0, var(--spacing-md));
+    width: 70%;
+  }
+  &-input {
+    width: 100%;
+    height: 3rem;
+  }
+}
+
+.input {
+  &-container {
+    width: 70%;
+    height: 4rem;
+  }
+
+  &-password-container {
+    width: 100%;
+    height: 4rem;
+  }
 }

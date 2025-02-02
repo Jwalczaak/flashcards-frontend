@@ -3,6 +3,18 @@
   background-color: var(--white-1);
 }
 
+.text-value-xs {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+}
+
+.text-value-xs-strong {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 600;
+}
+
 .text-value-sm {
   font-size: 1.4rem;
   line-height: 1.8rem;
@@ -16,12 +28,24 @@
 }
 
 .text-value-md {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.8rem;
   font-weight: 500;
 }
 
 .text-value-md-strong {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  font-weight: 600;
+}
+
+.text-value-lg {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+}
+
+.text-value-lg-strong {
   font-size: 1.8rem;
   line-height: 1.8rem;
   font-weight: 600;

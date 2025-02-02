@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputComponent } from '../../shared/components/input/input.component';
 import { SharedButtonComponent } from '../../shared/components/shared-button/shared-button.component';
+import { SharedLinkButtonComponent } from '../../shared/components/shared-link-button/shared-link-button.component';
 
 @Component({
   selector: 'app-auth-page',
-  imports: [InputComponent, SharedButtonComponent, ReactiveFormsModule],
+  imports: [InputComponent, SharedButtonComponent, ReactiveFormsModule, SharedLinkButtonComponent],
   templateUrl: './auth-page.component.html',
   styleUrl: './auth-page.component.scss',
 })

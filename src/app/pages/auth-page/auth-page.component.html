@@ -4,15 +4,23 @@
       <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <header class="login-header">
           <h1 class="text-value-md-strong login-header-welcome">Hello!</h1>
-          <span class="text-value-sm">Sign into Your account</span>
+          <span class="text-value-md">Sign into Your account</span>
         </header>
-        <label class="text-value-sm-strong" for="email">Email</label>
+
         <div class="input-container">
-          <app-input id="email" [inputType]="'text'" [iconName]="'mail'" [placeholder]="'Email'"></app-input>
+          <app-input [inputType]="'text'" [iconName]="'mail'" [placeholder]="'Email'"></app-input>
         </div>
-        <label class="text-value-sm-strong" for="password">Password</label>
-        <div class="input-container">
-          <app-input id="password" [inputType]="'password'" [iconName]="'lock'" [placeholder]="'Password'"></app-input>
+
+        <div class="password-container">
+          <div class="input-password-container">
+            <app-input
+              class="password-input"
+              [inputType]="'password'"
+              [iconName]="'lock'"
+              [placeholder]="'Password'"
+            ></app-input>
+          </div>
+          <app-shared-link-button [buttonText]="'Forgot password?'"></app-shared-link-button>
         </div>
 
         <div class="button-container"><app-shared-button [buttonType]="'submit'"></app-shared-button></div>
