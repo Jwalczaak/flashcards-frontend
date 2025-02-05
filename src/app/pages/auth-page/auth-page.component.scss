@@ -39,6 +39,11 @@
   &-header-welcome {
     text-align: center;
     margin-bottom: 5px;
+    color: var(--color-text-primary);
+  }
+
+  &-sign-into {
+    color: var(--color-text-primary);
   }
 }
 
