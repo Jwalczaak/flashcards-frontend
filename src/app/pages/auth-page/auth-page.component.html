@@ -1,41 +1,47 @@
 <div class="page-container">
-  <section class="card login-section">
-    <div class="form-container">
-      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <header class="login-header">
-          <h1 class="text-value-md-strong login-header-welcome">Hello!</h1>
-          <span class="text-value-md login-sign-into">Sign into Your account</span>
-        </header>
+  <div class="page-header-container">
+    <h1 class="text-value-md-strong page-header">Login page</h1>
+  </div>
 
-        <div class="input-container">
-          <app-input [inputType]="'text'" [iconName]="'mail'" [placeholder]="'Email'"></app-input>
+  <div class="form-container card">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <header class="login-header">
+        <h1 class="text-value-md-strong login-header-welcome">Hello!</h1>
+        <span class="text-value-md login-sign-into">Sign into Your account</span>
+      </header>
+
+      <div class="input-container">
+        <app-input [inputType]="'text'" [iconName]="'mail'" [placeholder]="'Email'"></app-input>
+      </div>
+
+      <div class="password-container">
+        <div class="input-password-container">
+          <app-input
+            class="password-input"
+            [inputType]="'password'"
+            [iconName]="'lock'"
+            [placeholder]="'Password'"
+          ></app-input>
         </div>
+        <app-shared-link-button [buttonText]="'Forgot password?'"></app-shared-link-button>
+      </div>
 
-        <div class="password-container">
-          <div class="input-password-container">
-            <app-input
-              class="password-input"
-              [inputType]="'password'"
-              [iconName]="'lock'"
-              [placeholder]="'Password'"
-            ></app-input>
-          </div>
-          <app-shared-link-button [buttonText]="'Forgot password?'"></app-shared-link-button>
-        </div>
+      <div class="button-container"><app-shared-button [buttonType]="'submit'"></app-shared-button></div>
+      <div class="Dont-have-account-container">
+        <span class="text-value-xs-strong Dont-have-account-description">Don't have an account?</span
+        ><app-shared-link-button [buttonText]="'Create'"></app-shared-link-button>
+      </div>
+    </form>
 
-        <div class="button-container"><app-shared-button [buttonType]="'submit'"></app-shared-button></div>
-      </form>
-
-      <section class="form-description-container">
-        <div class="form-description-container-text">
-          <header class="text-value-md-strong form-description-text">Welcome</header>
-          <p class="text-value-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus excepturi quaerat saepe blanditiis
-            maiores veniam. Quae illo quam dolorum ab reprehenderit perspiciatis sapiente quis cum. Nisi dolorum labore
-            a. Dignissimos!
-          </p>
-        </div>
-      </section>
-    </div>
-  </section>
+    <section class="form-description-container">
+      <div class="form-description-container-text">
+        <header class="text-value-md-strong form-description-text">Welcome</header>
+        <p class="text-value-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus excepturi quaerat saepe blanditiis
+          maiores veniam. Quae illo quam dolorum ab reprehenderit perspiciatis sapiente quis cum. Nisi dolorum labore a.
+          Dignissimos!
+        </p>
+      </div>
+    </section>
+  </div>
 </div>
