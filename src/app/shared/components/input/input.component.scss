@@ -15,23 +15,22 @@
 .icon {
   margin-left: 10px;
   font-size: 1.6rem;
-  color: #ccc;
+  color: var(--color-icon);
 }
 
 .input-wrapper {
   @include flexbox(row, flex-start, center);
-  // @include border(var(--border-radius-lg));
-  -webkit-box-shadow: 0px 5px 14px 1px #a1c4fd;
-  -moz-box-shadow: 0px 5px 14px 1px #a1c4fd;
-  box-shadow: 0px 5px 14px 1px #a1c4fd;
-  @include border(var(--border-radius-lg), rgba(var(--blue-1), 0.5));
+  -webkit-box-shadow: 0px 5px 14px 1px var(--color-primary);
+  -moz-box-shadow: 0px 5px 14px 1px var(--color-primary);
+  box-shadow: 0px 5px 14px 1px var(--color-primary);
+  @include border(var(--border-radius-lg), rgba(var(--color-primary), 0.5));
   width: 100%;
   height: 100%;
 }
 
 .input-wrapper:focus-within {
+  @include border(var(--border-radius-lg), var(--color-primary));
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  @include border(var(--border-radius-lg), var(--blue-1));
 }

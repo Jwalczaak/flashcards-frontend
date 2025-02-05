@@ -8,7 +8,7 @@
   column-gap: $column-gap;
 }
 
-@mixin border($radius: 0, $color: var(--gray-1)) {
+@mixin border($radius: 0, $color: var(--color-main-border)) {
   border: 1px solid $color;
   border-radius: $radius;
 }
