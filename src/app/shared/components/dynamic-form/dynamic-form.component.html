@@ -1,0 +1,26 @@
+<form (ngSubmit)="onSubmit()" class="login-form">
+  @for (field of fields(); track field) {
+    @switch (field.type) {
+      @case ('input') {
+        <div class="input-container">
+          <div class="input">
+            <app-input
+              [inputType]="field.inputType!"
+              [iconName]="field.icon ? field.icon : undefined"
+              [placeholder]="field.placeholder"
+            ></app-input>
+          </div>
+
+          @if (field.linkButtonText) {
+            <div class="shared-button-link-container">
+              <app-shared-link-button [buttonText]="field.linkButtonText"></app-shared-link-button>
+            </div>
+          }
+        </div>
+      }
+    }
+  }
+  <div class="button-container">
+    <app-shared-button [buttonType]="'submit'" [buttonText]="submitButtonText()"></app-shared-button>
+  </div>
+</form>

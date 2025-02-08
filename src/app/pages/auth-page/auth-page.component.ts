@@ -1,17 +1,39 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { InputComponent } from '../../shared/components/input/input.component';
-import { SharedButtonComponent } from '../../shared/components/shared-button/shared-button.component';
-import { SharedLinkButtonComponent } from '../../shared/components/shared-link-button/shared-link-button.component';
+
+import { DynamicFormComponent } from '../../shared/components/dynamic-form/dynamic-form.component';
+import { FormField } from '../../shared/types/form';
 
 @Component({
   selector: 'app-auth-page',
-  imports: [InputComponent, SharedButtonComponent, ReactiveFormsModule, SharedLinkButtonComponent],
+  imports: [ReactiveFormsModule, DynamicFormComponent],
   templateUrl: './auth-page.component.html',
   styleUrl: './auth-page.component.scss',
 })
 export class AuthPageComponent implements OnInit {
   loginForm!: FormGroup;
+
+  loginFormFields: FormField[] = [
+    {
+      type: 'input',
+      inputType: 'email',
+
+      name: 'email',
+      placeholder: 'Email',
+      required: true,
+      icon: 'mail',
+    },
+
+    {
+      type: 'input',
+      inputType: 'password',
+      linkButtonText: 'Forgot password?',
+      name: 'passowrd',
+      placeholder: 'Password',
+      required: true,
+      icon: 'lock',
+    },
+  ];
 
   constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
