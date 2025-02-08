@@ -9,6 +9,7 @@ import { ButtonType } from '../../types/button';
 })
 export class SharedButtonComponent {
   buttonType = input.required<ButtonType>();
+  buttonText = input.required<string>();
   clickButton = output<void>();
 
   onButtonClick(): void {
