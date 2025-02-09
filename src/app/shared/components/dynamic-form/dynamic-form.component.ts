@@ -1,5 +1,6 @@
 import { Component, input, OnInit, output } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { SignInRequest } from '../../types/auth';
 import { FormField } from '../../types/form';
 import { InputComponent } from '../input/input.component';
 import { SharedButtonComponent } from '../shared-button/shared-button.component';
@@ -14,28 +15,23 @@ export class DynamicFormComponent implements OnInit {
   fields = input.required<FormField[]>();
   submitButtonText = input.required<string>();
 
-  formSubmit = output<void>();
+  signIn = output<SignInRequest>();
 
   form!: FormGroup;
 
   ngOnInit(): void {
     const controls: { [key: string]: FormControl } = {};
     this.fields().forEach((field) => {
-      const validators = [Validators.minLength(3), Validators.maxLength(8)];
-      if (field.required) {
-        validators.push(Validators.required);
-      }
-
-      controls[field.name] = new FormControl('', validators);
+      controls[field.name] = new FormControl('');
     });
 
     this.form = new FormGroup(controls);
   }
 
   onSubmit(): void {
-    console.log('hello');
     if (this.form.valid) {
-      this.formSubmit.emit();
+      console.log('dsdasdsa');
+      this.signIn.emit(this.form.value);
     }
   }
 }
