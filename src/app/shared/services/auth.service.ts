@@ -1,36 +1,65 @@
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
+import { Injectable, PLATFORM_ID, computed, effect, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { catchError, of, tap } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 import { SignInRequest, SignInResponse } from '../types/auth';
-import { getStorageItem } from '../utils/local-storage.util';
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private tokenSignal = signal<string | null>(getStorageItem('token'));
-  private isLoggedInSignal = signal<boolean>(!!getStorageItem('token'));
-
-  private router = inject(Router);
+  private platformId = inject(PLATFORM_ID);
   private http = inject(HttpClient);
+  private router = inject(Router);
 
-  login(singInBody: SignInRequest) {
+  private storedToken = signal<string | null>(this.getTokenFromStorage());
+
+  private loading = signal<boolean>(true);
+
+  tokenSignal = computed(() => this.storedToken());
+  readonly isLoggedInSignal = computed(() => !!this.tokenSignal());
+
+  constructor() {
+    effect(() => {
+      console.log('Auth state changed:', this.isLoggedInSignal());
+      if (this.storedToken() !== null) {
+        this.loading.set(false);
+      }
+    });
+  }
+
+  private getTokenFromStorage(): string | null {
+    if (isPlatformBrowser(this.platformId)) {
+      console.log(localStorage.getItem('token'));
+      return localStorage.getItem('token');
+    }
+    return null;
+  }
+
+  login(signInBody: SignInRequest): Observable<SignInResponse | null> {
     const apiUrl: string = `${environment.API_URL}/auth/login`;
-    return this.http.post<SignInResponse>(apiUrl, singInBody).pipe(
+    return this.http.post<SignInResponse>(apiUrl, signInBody).pipe(
       tap((response: SignInResponse) => {
-        // console.log(response);
-        localStorage.setItem('authToken', response.token);
-        // this.tokenSubject.next(response.token);
-        // this.isLoggedInSignal.set(true);
-        // this.router.navigate(['/home']);
-      }),
-      catchError((error) => {
-        console.error('Login failed', error);
-        return of(null);
+        if (isPlatformBrowser(this.platformId)) {
+          localStorage.setItem('token', response.token);
+        }
+        this.storedToken.set(response.token); // Update token reactively
+        this.router.navigate(['/home'], { replaceUrl: true });
       })
     );
   }
 
-  constructor() {}
+  logout(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem('token');
+    }
+    this.storedToken.set(null); // Reactively set token to null
+    this.router.navigate(['/auth'], { replaceUrl: true });
+  }
+
+  isLoading(): boolean {
+    return this.loading();
+  }
 }

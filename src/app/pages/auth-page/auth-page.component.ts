@@ -1,6 +1,7 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
+import { Router } from '@angular/router';
 import { DynamicFormComponent } from '../../shared/components/dynamic-form/dynamic-form.component';
 import { SharedLinkButtonComponent } from '../../shared/components/shared-link-button/shared-link-button.component';
 import { AuthService } from '../../shared/services/auth.service';
@@ -18,6 +19,7 @@ export class AuthPageComponent implements OnInit {
   isLoginMode = signal(true);
 
   private authService = inject(AuthService);
+  private router = inject(Router);
 
   get headerText() {
     return this.isLoginMode() ? 'Sign into Your account' : 'Create Your account';
@@ -31,14 +33,8 @@ export class AuthPageComponent implements OnInit {
     return this.isLoginMode() ? 'Create' : 'Sign in';
   }
 
-  login(singInBody: SignInRequest): void {
-    this.authService.login(singInBody).subscribe((response) => {
-      console.log(response);
-    });
-  }
-
-  onHandleSignIn(signIndata: SignInRequest): void {
-    console.log(signIndata);
+  onHandleSignIn(singInBody: SignInRequest): void {
+    this.authService.login(singInBody).subscribe(console.log);
   }
 
   changeDisplayMode(): void {
@@ -113,16 +109,13 @@ export class AuthPageComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {}
   ngOnInit(): void {
+    if (this.authService.tokenSignal()) {
+      // this.router.navigate(['/home']);
+    }
+
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
-  }
-  onSubmit(): void {
-    console.log('submit');
-  }
-
-  clickButton(): void {
-    console.log('click');
   }
 }

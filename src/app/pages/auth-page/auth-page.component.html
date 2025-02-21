@@ -13,7 +13,7 @@
         <app-dynamic-form
           [fields]="loginFormFields"
           [submitButtonText]="'Submit'"
-          (signIn)="login($event)"
+          (signIn)="onHandleSignIn($event)"
         ></app-dynamic-form>
       } @else {
         <app-dynamic-form [fields]="singUpFields" [submitButtonText]="accountInfoButtonText"></app-dynamic-form>
