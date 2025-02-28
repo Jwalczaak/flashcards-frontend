@@ -1,5 +1,6 @@
-import { Component, computed, input, OnInit, output, signal } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { Component, input, OnInit, output } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { SignInRequest } from '../../types/auth';
 import { FormField } from '../../types/form';
 import { InputComponent } from '../input/input.component';
 import { SharedButtonComponent } from '../shared-button/shared-button.component';
@@ -14,23 +15,23 @@ export class DynamicFormComponent implements OnInit {
   fields = input.required<FormField[]>();
   submitButtonText = input.required<string>();
 
-  formSubmit = output<void>();
+  signIn = output<SignInRequest>();
 
-  formState = signal<{ [key: string]: string | boolean }>({});
+  form!: FormGroup;
 
   ngOnInit(): void {
-    const initialState: { [key: string]: string | boolean } = {};
+    const controls: { [key: string]: FormControl } = {};
     this.fields().forEach((field) => {
-      initialState[field.name] === 'checkbox' ? false : '';
+      controls[field.name] = new FormControl('');
     });
-    this.formState.set(initialState);
+
+    this.form = new FormGroup(controls);
   }
 
-  isFormValid = computed(() => this.fields().every((field) => !field.required || !!this.formState()[field.name]));
-
   onSubmit(): void {
-    if (this.isFormValid()) {
-      this.formSubmit.emit();
+    if (this.form.valid) {
+      console.log('dsdasdsa');
+      this.signIn.emit(this.form.value);
     }
   }
 }

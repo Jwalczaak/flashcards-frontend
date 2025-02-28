@@ -3,9 +3,23 @@ import { provideServerRendering } from '@angular/platform-server';
 import { provideServerRoutesConfig } from '@angular/ssr';
 import { appConfig } from './app.config';
 import { serverRoutes } from './app.routes.server';
+import { LOCAL_STORAGE } from './shared/tokens';
 
 const serverConfig: ApplicationConfig = {
-  providers: [provideServerRendering(), provideServerRoutesConfig(serverRoutes)],
+  providers: [
+    provideServerRendering(),
+    {
+      provide: LOCAL_STORAGE,
+      useFactory: () => ({
+        useFactory: () => ({
+          getItem: () => {},
+          setItem: () => {},
+          removeItem: () => {},
+        }),
+      }),
+    },
+    provideServerRoutesConfig(serverRoutes),
+  ],
 };
 
 export const config = mergeApplicationConfig(appConfig, serverConfig);

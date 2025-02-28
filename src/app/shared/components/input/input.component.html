@@ -1,4 +1,10 @@
 <div class="input-wrapper">
   <i class="material-icons icon">{{ iconName() }}</i>
-  <input [type]="inputType()" class="input" [placeholder]="placeholder()" />
+  <input
+    [type]="inputType()"
+    class="input"
+    [placeholder]="placeholder()"
+    (input)="onInputChange($event)"
+    (blur)="onBlur()"
+  />
 </div>

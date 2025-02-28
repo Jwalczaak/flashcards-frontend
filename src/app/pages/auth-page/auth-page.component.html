@@ -7,15 +7,25 @@
     <div class="form-container">
       <header class="login-header">
         <h1 class="text-value-md-strong login-header-welcome">Hello!</h1>
-        <span class="text-value-md login-sign-into">Sign into Your account</span>
+        <span class="text-value-md login-sign-into">{{ headerText }}</span>
       </header>
-      <app-dynamic-form [fields]="loginFormFields" [submitButtonText]="'Submit'"></app-dynamic-form>
+      @if (isLoginMode()) {
+        <app-dynamic-form
+          [fields]="loginFormFields"
+          [submitButtonText]="'Submit'"
+          (signIn)="onHandleSignIn($event)"
+        ></app-dynamic-form>
+      } @else {
+        <app-dynamic-form [fields]="singUpFields" [submitButtonText]="accountInfoButtonText"></app-dynamic-form>
+      }
+      <div class="account-info-container">
+        <span class="text-value-xs-strong account-info-description">{{ accountInfoText }}</span>
+        <app-shared-link-button
+          [buttonText]="accountInfoButtonText"
+          (clickButton)="changeDisplayMode()"
+        ></app-shared-link-button>
+      </div>
     </div>
-
-    <!-- <div class="Dont-have-account-container">
-        <span class="text-value-xs-strong Dont-have-account-description">Don't have an account?</span
-        ><app-shared-link-button [buttonText]="'Create'"></app-shared-link-button>
-      </div> -->
 
     <section class="form-description-container">
       <div class="form-description-container-text">

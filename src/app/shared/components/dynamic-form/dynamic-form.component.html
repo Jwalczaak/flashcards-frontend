@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()" class="login-form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">
   @for (field of fields(); track field) {
     @switch (field.type) {
       @case ('input') {
@@ -8,6 +8,7 @@
               [inputType]="field.inputType!"
               [iconName]="field.icon ? field.icon : undefined"
               [placeholder]="field.placeholder"
+              [formControlName]="field.name"
             ></app-input>
           </div>
 
