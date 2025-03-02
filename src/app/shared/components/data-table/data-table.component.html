@@ -1,0 +1,18 @@
+<table class="table">
+  <thead class="thead">
+    <tr>
+      @for (column of columns(); track column) {
+        <th class="th text-value-xs-strong">{{ column.displayName }}</th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+    @for (row of tableData(); track row) {
+      <tr class="tr">
+        @for (column of columns(); track column) {
+          <td>{{ row[column.apiName] }}</td>
+        }
+      </tr>
+    }
+  </tbody>
+</table>

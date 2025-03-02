@@ -1,0 +1,21 @@
+@import "../../../../styles/mixins";
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.thead {
+  height: 3rem;
+  background-color: var(--color-primary-200);
+  color: var(--color-primary-700);
+}
+
+.tr {
+  height: 3rem;
+}
+
+.th {
+  text-align: start;
+  padding: 1rem;
+}

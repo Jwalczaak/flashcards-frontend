@@ -1,9 +1,5 @@
 @import "../../../styles/mixins";
 
-* {
-  font-family: Roboto, "Open Sans", sans-serif;
-}
-
 .page-container {
   @include flexbox(column, space-evenly, center);
   width: 100vw;
@@ -19,9 +15,9 @@
   @include flexbox(row, flex-start, center, 0, 20px);
   width: 1200px;
   height: 75%;
-  -webkit-box-shadow: -10px 0px 20px 10px var(--color-primary);
-  -moz-box-shadow: -10px 0px 20px 10px var(--color-primary);
-  box-shadow: -10px 0px 20px 10px var(--color-primary);
+  -webkit-box-shadow: -10px 0px 20px 10px var(--color-secondary-200);
+  -moz-box-shadow: -10px 0px 20px 10px var(--color-secondary-200);
+  box-shadow: -10px 0px 20px 10px var(--color-secondary-200);
 }
 
 .login {
@@ -44,19 +40,19 @@
   }
 
   &-description {
-    color: var(--color-text-inverted);
+    color: var(--color-secondary-100);
     &-container {
       position: relative;
       width: 40%;
       height: 100%;
 
-      background-image: linear-gradient(120deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      background-image: linear-gradient(120deg, var(--color-secondary-200) 0%, var(--color-secondary-100) 100%);
       border-top-right-radius: var(--border-radius-md);
       border-bottom-right-radius: var(--border-radius-md);
     }
 
     &-container-text {
-      color: var(--color-text-inverted);
+      color: var(--color-primary-100);
       position: absolute;
       top: 50%;
       left: 50%;
@@ -75,7 +71,7 @@ app-dynamic-form {
 }
 
 .account-info-description {
-  color: var(--color-text-secondary-light);
+  color: var(--color-secondary-100);
 }
 
 @media (max-width: 1300px) {
@@ -104,9 +100,9 @@ app-dynamic-form {
   .content-container {
     flex-direction: column-reverse;
     row-gap: 0;
-    -webkit-box-shadow: -10px 0px 10px 1px var(--color-primary);
-    -moz-box-shadow: -10px 0px 10px 1px var(--color-primary);
-    box-shadow: -10px 0px 10px 1px var(--color-primary);
+    -webkit-box-shadow: -10px 0px 10px 1px var(--color-secondary-200);
+    -moz-box-shadow: -10px 0px 10px 1px var(--color-secondary-200);
+    box-shadow: -10px 0px 10px 1px var(--color-secondary-200);
   }
 
   .form {
