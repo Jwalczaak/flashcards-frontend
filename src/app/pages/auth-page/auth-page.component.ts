@@ -5,8 +5,8 @@ import { Router } from '@angular/router';
 import { DynamicFormComponent } from '../../shared/components/dynamic-form/dynamic-form.component';
 import { SharedLinkButtonComponent } from '../../shared/components/shared-link-button/shared-link-button.component';
 import { AuthService } from '../../shared/services/auth.service';
-import { SignInRequest } from '../../shared/types/auth';
-import { FormField } from '../../shared/types/form';
+import { SignInRequest } from '../../shared/types/auth.type';
+import { FormField } from '../../shared/types/form.type';
 
 @Component({
   selector: 'app-auth-page',

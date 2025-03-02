@@ -1,0 +1,18 @@
+@import "../../../styles/mixins";
+
+.page-container {
+  @include flexbox(row, flex-start, center, 20px);
+  height: 100vh;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  padding: 0 var(--spacing-lg);
+}
+
+.nav-bar-container {
+  height: 90%;
+  width: 20rem;
+}
+
+.home-content-container {
+  height: 90%;
+  width: calc(100% - 20rem);
+}
