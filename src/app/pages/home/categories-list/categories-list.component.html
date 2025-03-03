@@ -1,1 +1,19 @@
-<app-data-table [columns]="categoriesDataColumns" [tableData]="categoriesData"></app-data-table>
+<section class="categories-section">
+  <header class="text-value-sm-strong">Categories</header>
+  <div class="actions-container">
+    <div class="action-input-container">
+      <app-input [inputType]="'text'" [placeholder]="'Search'"></app-input>
+    </div>
+
+    <div class="action-input-container">
+      <app-shared-button [buttonType]="'action'" [buttonText]="'filters'"></app-shared-button>
+    </div>
+
+    <div class="action-input-container">
+      <app-shared-button [buttonType]="'action'" [buttonText]="'configurations'"></app-shared-button>
+    </div>
+  </div>
+  <div class="categories-table-container">
+    <app-data-table [columns]="categoriesDataColumns" [tableData]="categoriesData"></app-data-table>
+  </div>
+</section>

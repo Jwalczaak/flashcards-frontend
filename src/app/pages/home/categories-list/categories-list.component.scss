@@ -1,0 +1,21 @@
+@import "../../../../styles/mixins";
+
+.categories {
+  &-section {
+    @include flexbox(column, flex-start, flex-start, var(--spacing-xmd));
+  }
+
+  &-table-container {
+    width: 100%;
+  }
+}
+
+.actions-container {
+  @include flexbox(row, flex-start, flex-start, var(--spacing-md));
+}
+
+.action {
+  &-input-container {
+    height: 2.6rem;
+  }
+}

@@ -13,6 +13,7 @@
 }
 
 .home-content-container {
-  height: 90%;
+  height: calc(90% - 4rem);
   width: calc(100% - 20rem);
+  padding: 20px;
 }

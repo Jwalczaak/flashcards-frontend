@@ -12,6 +12,7 @@
 }
 
 .tr {
+  @include border(bottom);
   height: 3rem;
 }
 

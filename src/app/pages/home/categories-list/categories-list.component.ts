@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { DataTableComponent } from '../../../shared/components/data-table/data-table.component';
 import { DataTableColumnsConfig } from '../../../shared/components/data-table/data-table.type';
+import { InputComponent } from '../../../shared/components/input/input.component';
+import { SharedButtonComponent } from '../../../shared/components/shared-button/shared-button.component';
 
 @Component({
   selector: 'app-categories-list',
-  imports: [DataTableComponent],
+  imports: [DataTableComponent, InputComponent, SharedButtonComponent],
   templateUrl: './categories-list.component.html',
   styleUrl: './categories-list.component.scss',
 })
@@ -70,7 +72,7 @@ export class CategoriesListComponent {
       description: 'Animals',
       createDate: new Date().toISOString(),
       lastUpdate: new Date().toISOString(),
-      User: 'John Walczi',
+      user: 'John Walczi',
     },
     {
       id: '8932142183214',
@@ -78,7 +80,7 @@ export class CategoriesListComponent {
       description: 'Cities',
       createDate: new Date().toISOString(),
       lastUpdate: new Date().toISOString(),
-      User: 'Arturito Platynov',
+      user: 'Arturito Platynov',
     },
     {
       id: '893214218325',
@@ -86,7 +88,7 @@ export class CategoriesListComponent {
       description: 'Technology',
       createDate: new Date().toISOString(),
       lastUpdate: new Date().toISOString(),
-      User: 'John Walczi',
+      user: 'John Walczi',
     },
     {
       id: '893214218323',
@@ -94,7 +96,7 @@ export class CategoriesListComponent {
       description: 'Cars',
       createDate: new Date().toISOString(),
       lastUpdate: new Date().toISOString(),
-      User: 'John Walczi',
+      user: 'John Walczi',
     },
     {
       id: '893214218326',
@@ -102,7 +104,7 @@ export class CategoriesListComponent {
       description: 'Animals',
       createDate: new Date().toISOString(),
       lastUpdate: new Date().toISOString(),
-      User: 'John Walczi',
+      user: 'John Walczi',
     },
   ];
 }
