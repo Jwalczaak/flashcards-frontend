@@ -1,16 +1,24 @@
 <section class="categories-section">
-  <header class="text-value-sm-strong">Categories</header>
+  <header class="text-value-sm-strong categories-header">Categories</header>
   <div class="actions-container">
-    <div class="action-input-container">
-      <app-input [inputType]="'text'" [placeholder]="'Search'"></app-input>
+    <div class="actions-table">
+      <div class="action-container input-container">
+        <app-input [inputType]="'text'" [placeholder]="'Search'"></app-input>
+      </div>
+
+      <div class="action-container">
+        <app-shared-button [buttonType]="'action'" [buttonText]="'filters'"></app-shared-button>
+      </div>
+
+      <div class="action-container">
+        <app-shared-button [buttonType]="'action'" [buttonText]="'configurations'"></app-shared-button>
+      </div>
     </div>
 
-    <div class="action-input-container">
-      <app-shared-button [buttonType]="'action'" [buttonText]="'filters'"></app-shared-button>
-    </div>
-
-    <div class="action-input-container">
-      <app-shared-button [buttonType]="'action'" [buttonText]="'configurations'"></app-shared-button>
+    <div class="actions-add-category">
+      <div class="action-container">
+        <app-shared-button [buttonType]="'action'" [buttonText]="'Add category'"></app-shared-button>
+      </div>
     </div>
   </div>
   <div class="categories-table-container">

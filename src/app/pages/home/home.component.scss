@@ -4,7 +4,7 @@
   @include flexbox(row, flex-start, center, 20px);
   height: 100vh;
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-  padding: 0 var(--spacing-lg);
+  padding: 0 var(--spacing-xl);
 }
 
 .nav-bar-container {
@@ -13,7 +13,6 @@
 }
 
 .home-content-container {
-  height: calc(90% - 4rem);
+  height: 90%;
   width: calc(100% - 20rem);
-  padding: 20px;
 }

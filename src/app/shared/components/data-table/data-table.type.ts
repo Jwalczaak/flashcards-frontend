@@ -9,7 +9,7 @@ export type DataTableColumnsConfig = {
   displayName: string;
   hasSort: boolean;
   hasFilter: boolean;
-  sortMode: DataTableSortMode;
+  sortMode?: DataTableSortMode;
   filterType?: DataTableSortType;
   filterValue?: string;
 };

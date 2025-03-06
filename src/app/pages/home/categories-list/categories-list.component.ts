@@ -13,6 +13,12 @@ import { SharedButtonComponent } from '../../../shared/components/shared-button/
 export class CategoriesListComponent {
   categoriesDataColumns: DataTableColumnsConfig[] = [
     {
+      apiName: 'checkbox',
+      displayName: 'checkbox',
+      hasSort: false,
+      hasFilter: false,
+    },
+    {
       apiName: 'id',
       displayName: 'Id',
       hasSort: true,
@@ -66,6 +72,14 @@ export class CategoriesListComponent {
   ];
 
   categoriesData: any[] = [
+    {
+      id: '893214218321',
+      name: 'Animals',
+      description: 'Animals',
+      createDate: new Date().toISOString(),
+      lastUpdate: new Date().toISOString(),
+      user: 'John Walczi',
+    },
     {
       id: '893214218321',
       name: 'Animals',
