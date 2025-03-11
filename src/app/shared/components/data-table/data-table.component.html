@@ -1,0 +1,32 @@
+<table class="table">
+  <thead class="thead">
+    <tr>
+      @for (column of columns(); track column) {
+        @switch (column.apiName) {
+          @case ('checkbox') {
+            <th>
+              <app-checkbox></app-checkbox>
+            </th>
+          }
+          @default {
+            <th class="th text-value-xs-strong">{{ column.displayName }}</th>
+          }
+        }
+      }
+    </tr>
+  </thead>
+  <tbody>
+    @for (row of tableData(); track row) {
+      <tr class="tr">
+        @for (column of columns(); track column) {
+          @switch (column.apiName) {
+            @case ('checkbox') {}
+            @default {
+              <td class="text-value-xs">{{ row[column.apiName] }}</td>
+            }
+          }
+        }
+      </tr>
+    }
+  </tbody>
+</table>

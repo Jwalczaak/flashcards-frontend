@@ -1,7 +1,7 @@
 import { Component, input, OnInit, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { SignInRequest } from '../../types/auth';
-import { FormField } from '../../types/form';
+import { SignInRequest } from '../../types/auth.type';
+import { FormField } from '../../types/form.type';
 import { InputComponent } from '../input/input.component';
 import { SharedButtonComponent } from '../shared-button/shared-button.component';
 import { SharedLinkButtonComponent } from '../shared-link-button/shared-link-button.component';

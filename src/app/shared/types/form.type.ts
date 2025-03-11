@@ -1,5 +1,5 @@
 import { ValidatorFn } from '@angular/forms';
-import { InputType } from './input';
+import { InputType } from './input.type';
 
 export type FieldType = 'input' | 'input-link-button' | 'radio' | 'select';
 

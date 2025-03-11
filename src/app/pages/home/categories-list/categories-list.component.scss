@@ -1,0 +1,37 @@
+@import "../../../../styles/mixins";
+
+.categories {
+  &-header {
+    margin: var(--spacing-md) 0 0 var(--spacing-md);
+  }
+
+  &-section {
+    @include flexbox(column, flex-start, flex-start, var(--spacing-xmd));
+  }
+
+  &-table-container {
+    width: 100%;
+  }
+}
+
+.actions {
+  &-container {
+    @include flexbox(row, space-between, flex-start, var(--spacing-md));
+    width: calc(100% - var(--spacing-lg));
+    padding: 0 var(--spacing-md);
+  }
+
+  &-table {
+    @include flexbox(row, flex-start, flex-start, var(--spacing-md));
+  }
+}
+
+.input-container {
+  width: 28rem;
+}
+
+.action {
+  &-container {
+    height: 2.6rem;
+  }
+}

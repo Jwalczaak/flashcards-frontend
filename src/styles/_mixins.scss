@@ -8,7 +8,18 @@
   column-gap: $column-gap;
 }
 
-@mixin border($radius: 0, $color: var(--color-main-border)) {
-  border: 1px solid $color;
+@mixin border($direction: all, $radius: 0, $color: var(--color-primary-600,)) {
+  @if ($direction == all) {
+    border: 1px solid $color;
+  } @else if($direction == top) {
+    border-top: 1px solid $color;
+  } @else if($direction == "right") {
+    border-right: 1px solid $color;
+  } @else if($direction == bottom) {
+    border-bottom: 1px solid $color;
+  } @else if($direction == left) {
+    border-left: 1px solid $color;
+  }
+
   border-radius: $radius;
 }

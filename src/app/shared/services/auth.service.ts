@@ -4,7 +4,7 @@ import { Injectable, PLATFORM_ID, computed, effect, inject, signal } from '@angu
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
-import { SignInRequest, SignInResponse } from '../types/auth';
+import { SignInRequest, SignInResponse } from '../types/auth.type';
 
 @Injectable({
   providedIn: 'root',
