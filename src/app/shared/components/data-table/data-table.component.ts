@@ -11,11 +11,4 @@ import { DataTableColumnsConfig } from './data-table.type';
 export class DataTableComponent {
   columns = input.required<DataTableColumnsConfig[]>();
   tableData = input.required<any>();
-
-  constructor() {
-    setTimeout(() => {
-      console.log(this.columns());
-      console.log(this.tableData());
-    }, 1000);
-  }
 }

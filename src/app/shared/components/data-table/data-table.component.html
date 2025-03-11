@@ -18,12 +18,11 @@
   <tbody>
     @for (row of tableData(); track row) {
       <tr class="tr">
-        <td></td>
-        @for (column1 of columns(); track column1) {
-          @switch (column1.apiName) {
+        @for (column of columns(); track column) {
+          @switch (column.apiName) {
             @case ('checkbox') {}
             @default {
-              <td>{{ row[column1.apiName] }}</td>
+              <td class="text-value-xs">{{ row[column.apiName] }}</td>
             }
           }
         }

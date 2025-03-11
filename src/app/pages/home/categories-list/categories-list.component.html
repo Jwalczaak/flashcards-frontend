@@ -21,7 +21,9 @@
       </div>
     </div>
   </div>
-  <div class="categories-table-container">
-    <app-data-table [columns]="categoriesDataColumns" [tableData]="categoriesData"></app-data-table>
-  </div>
+  @if (categoriesData.status() === status.Resolved) {
+    <div class="categories-table-container">
+      <app-data-table [columns]="categoriesDataColumns" [tableData]="categoriesData.value()"></app-data-table>
+    </div>
+  }
 </section>

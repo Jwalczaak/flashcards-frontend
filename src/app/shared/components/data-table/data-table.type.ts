@@ -1,9 +1,3 @@
-export type DataTableColumns = {
-  apiName: string;
-  displayName: string;
-  config: any;
-};
-
 export type DataTableColumnsConfig = {
   apiName: string;
   displayName: string;
