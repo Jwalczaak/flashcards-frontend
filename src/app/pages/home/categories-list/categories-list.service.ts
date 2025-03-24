@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { effect, inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { map, Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment.development';
@@ -19,11 +19,6 @@ export class CategoriesListService {
           return response ? response.data : undefined;
         })
       ),
-  });
-
-  eff = effect(() => {
-    // console.log(ResourceStatus[this.categories.status()]);
-    console.log(this.categories.value());
   });
 
   getCategories(): Observable<CategoryEntity[]> {

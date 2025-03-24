@@ -23,7 +23,6 @@ export class AuthService {
 
   constructor() {
     effect(() => {
-      console.log('Auth state changed:', this.isLoggedInSignal());
       if (this.storedToken() !== null) {
         this.loading.set(false);
       }
@@ -32,7 +31,6 @@ export class AuthService {
 
   private getTokenFromStorage(): string | null {
     if (isPlatformBrowser(this.platformId)) {
-      console.log(localStorage.getItem('token'));
       return localStorage.getItem('token');
     }
     return null;

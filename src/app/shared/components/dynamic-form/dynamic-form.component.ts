@@ -30,7 +30,6 @@ export class DynamicFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.form.valid) {
-      console.log('dsdasdsa');
       this.signIn.emit(this.form.value);
     }
   }

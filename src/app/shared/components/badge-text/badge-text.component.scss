@@ -1,0 +1,6 @@
+.purple {
+  border-radius: var(--border-radius-md);
+  color: var(--color-secondary-800);
+  background-color: color-mix(in srgb, var(--color-secondary-800) 15%, transparent);
+  opacity: 0.5;
+}

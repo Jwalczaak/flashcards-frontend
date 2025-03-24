@@ -1,4 +1,5 @@
 import { Component, inject, ResourceStatus } from '@angular/core';
+import { BadgeTextComponent } from '../../../shared/components/badge-text/badge-text.component';
 import { DataTableComponent } from '../../../shared/components/data-table/data-table.component';
 import { DataTableColumnsConfig } from '../../../shared/components/data-table/data-table.type';
 import { InputComponent } from '../../../shared/components/input/input.component';
@@ -7,7 +8,7 @@ import { CategoriesListService } from './categories-list.service';
 
 @Component({
   selector: 'app-categories-list',
-  imports: [DataTableComponent, InputComponent, SharedButtonComponent],
+  imports: [DataTableComponent, InputComponent, SharedButtonComponent, BadgeTextComponent],
   templateUrl: './categories-list.component.html',
   styleUrl: './categories-list.component.scss',
 })
