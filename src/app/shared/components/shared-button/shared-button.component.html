@@ -1,1 +1,6 @@
-<button class="btn text-value-sm-strong" [type]="buttonType()" (click)="onButtonClick()">{{ buttonText() }}</button>
+<button [ngClass]="buttonColor()" class="btn" [type]="buttonType()" (click)="onButtonClick()">
+  @if (iconName()) {
+    <i class="material-icons icon">{{ iconName() }}</i>
+  }
+  <span class="btn-text text-value-sm-strong"> {{ buttonText() }}</span>
+</button>

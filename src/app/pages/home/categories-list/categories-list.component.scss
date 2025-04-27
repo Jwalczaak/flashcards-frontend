@@ -39,8 +39,9 @@
 
   &-header {
     height: 6rem;
+    padding: 0 1rem;
     @include border(bottom, 0, var(--color-primary-300));
-    @include flexbox(row, flex-start, flex-start, var(--spacing-xmd));
+    @include flexbox(row, space-between, flex-start, var(--spacing-xmd));
   }
 
   &-header-content {
@@ -48,9 +49,18 @@
     height: 100%;
   }
 
+  &-header-buttons-container {
+    @include flexbox(row, flex-start, center, var(--spacing-xmd));
+    height: 100%;
+  }
+
   &-info {
     @include flexbox(row, flex-start, flex-start, var(--spacing-xmd));
   }
+}
+
+.filters-button {
+  height: 3.5rem;
 }
 
 .actions {

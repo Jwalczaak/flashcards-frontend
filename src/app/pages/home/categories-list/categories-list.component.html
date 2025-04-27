@@ -28,6 +28,22 @@
           <span class="text-value-xs"> Here you can find your categories</span>
         </div>
       </div>
+
+      <div class="categories-list-header-buttons-container">
+        <app-shared-button
+          class="filters-button"
+          [buttonType]="'action'"
+          [buttonText]="'Filters'"
+          [iconName]="'filter_list'"
+          [buttonColor]="'white'"
+        ></app-shared-button>
+
+        <app-shared-button
+          [buttonType]="'action'"
+          [buttonText]="'Add Category'"
+          [buttonColor]="'light-blue-gradient'"
+        ></app-shared-button>
+      </div>
     </header>
     <div class="actions-container">
       <div class="actions-table">
@@ -36,17 +52,29 @@
         </div>
 
         <div class="action-container">
-          <app-shared-button [buttonType]="'action'" [buttonText]="'filters'"></app-shared-button>
+          <app-shared-button
+            [buttonType]="'action'"
+            [buttonText]="'filters'"
+            [buttonColor]="'white'"
+          ></app-shared-button>
         </div>
 
         <div class="action-container">
-          <app-shared-button [buttonType]="'action'" [buttonText]="'configurations'"></app-shared-button>
+          <app-shared-button
+            [buttonType]="'action'"
+            [buttonText]="'configurations'"
+            [buttonColor]="'white'"
+          ></app-shared-button>
         </div>
       </div>
 
       <div class="actions-add-category">
         <div class="action-container">
-          <app-shared-button [buttonType]="'action'" [buttonText]="'Add category'"></app-shared-button>
+          <app-shared-button
+            [buttonType]="'action'"
+            [buttonText]="'Add category'"
+            [buttonColor]="'light-blue-gradient'"
+          ></app-shared-button>
         </div>
       </div>
     </div>
