@@ -9,11 +9,12 @@
   height: 3rem;
   background-color: var(--color-primary-200);
   color: var(--color-primary-700);
+  @include border(bottom, var(--border-radius-lg), var(--color-primary-300));
 }
 
 .tr {
-  @include border(bottom);
-  height: 3rem;
+  @include border(bottom, var(--border-radius-lg), var(--color-primary-300));
+  height: 5rem;
 }
 
 .th {

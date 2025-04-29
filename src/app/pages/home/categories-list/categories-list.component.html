@@ -31,7 +31,7 @@
 
       <div class="categories-list-header-buttons-container">
         <app-shared-button
-          class="filters-button"
+          class="button"
           [buttonType]="'action'"
           [buttonText]="'Filters'"
           [iconName]="'filter_list'"
@@ -39,8 +39,10 @@
         ></app-shared-button>
 
         <app-shared-button
+          class="button"
           [buttonType]="'action'"
           [buttonText]="'Add Category'"
+          [iconName]="'add'"
           [buttonColor]="'light-blue-gradient'"
         ></app-shared-button>
       </div>
@@ -51,31 +53,18 @@
           <app-input [inputType]="'text'" [placeholder]="'Search'"></app-input>
         </div>
 
-        <div class="action-container">
-          <app-shared-button
-            [buttonType]="'action'"
-            [buttonText]="'filters'"
-            [buttonColor]="'white'"
-          ></app-shared-button>
-        </div>
+        <div class="action-container"></div>
 
-        <div class="action-container">
-          <app-shared-button
-            [buttonType]="'action'"
-            [buttonText]="'configurations'"
-            [buttonColor]="'white'"
-          ></app-shared-button>
-        </div>
+        <div class="action-container"></div>
       </div>
 
-      <div class="actions-add-category">
-        <div class="action-container">
-          <app-shared-button
-            [buttonType]="'action'"
-            [buttonText]="'Add category'"
-            [buttonColor]="'light-blue-gradient'"
-          ></app-shared-button>
-        </div>
+      <div class="action-container">
+        <app-shared-button
+          class="button"
+          [buttonType]="'action'"
+          [buttonText]="'Clear All'"
+          [buttonColor]="'white'"
+        ></app-shared-button>
       </div>
     </div>
     @if (categoriesData.status() === status.Resolved) {

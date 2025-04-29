@@ -13,23 +13,27 @@
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+.icon {
+  font-size: 1.6rem;
+}
+
+.light-blue-gradient {
+  background-image: linear-gradient(to right, var(--color-secondary-200) 0%, var(--color-secondary-100) 100%);
+  background-color: transparent;
 
   &:hover {
     background-position: right center;
   }
 }
 
-.icon {
-  font-size: 1rem;
-}
-
-.light-blue-gradient {
-  background-image: linear-gradient(to right, var(--color-secondary-200) 0%, var(--color-secondary-100) 100%);
-  background-color: transparent;
-}
-
 .white {
   background-color: var(--color-primary-100);
   color: var(--color-primary-800);
   @include border(all, var(--border-radius-lg), var(--color-primary-300));
+
+  &:hover {
+    background-color: var(--color-primary-200);
+  }
 }

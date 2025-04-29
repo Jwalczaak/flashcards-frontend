@@ -1,5 +1,9 @@
 @import "../../../../styles/mixins";
 
+.button {
+  height: 3.5rem;
+}
+
 .categories {
   @include flexbox(column, flex-start, flex-start, var(--spacing-xmd));
   height: 100%;
@@ -30,7 +34,8 @@
 
 .categories-list {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 20rem);
+  overflow-y: scroll;
   @include border(all, var(--border-radius-md), var(--color-primary-300));
 
   border-bottom: none;
@@ -39,7 +44,7 @@
 
   &-header {
     height: 6rem;
-    padding: 0 1rem;
+    padding: 1rem;
     @include border(bottom, 0, var(--color-primary-300));
     @include flexbox(row, space-between, flex-start, var(--spacing-xmd));
   }
@@ -54,20 +59,20 @@
     height: 100%;
   }
 
+  &-text-wrapper {
+    line-height: 2.5rem;
+  }
+
   &-info {
     @include flexbox(row, flex-start, flex-start, var(--spacing-xmd));
   }
 }
 
-.filters-button {
-  height: 3.5rem;
-}
-
 .actions {
   &-container {
     @include flexbox(row, space-between, flex-start, var(--spacing-md));
-    width: calc(100% - var(--spacing-lg));
     height: 3.5rem;
+    padding: 1rem;
   }
 
   &-table {
@@ -81,7 +86,7 @@
 
 .action {
   &-container {
-    height: 2.6rem;
+    height: 3.5rem;
   }
 }
 
