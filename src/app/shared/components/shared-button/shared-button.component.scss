@@ -1,8 +1,9 @@
+@import "../../../../styles/mixins";
+
 .btn {
+  @include flexbox(row, center, center, var(--spacing-md));
   height: 100%;
-  display: block;
-  background-color: transparent;
-  background-image: linear-gradient(to right, var(--color-secondary-200) 0%, var(--color-secondary-100) 100%);
+
   background-size: 200% auto;
   color: var(--color-primary-100);
   border-radius: var(--border-radius-lg);
@@ -12,8 +13,27 @@
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+.icon {
+  font-size: 1.6rem;
+}
+
+.light-blue-gradient {
+  background-image: linear-gradient(to right, var(--color-secondary-200) 0%, var(--color-secondary-100) 100%);
+  background-color: transparent;
 
   &:hover {
     background-position: right center;
+  }
+}
+
+.white {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-800);
+  @include border(all, var(--border-radius-lg), var(--color-primary-300));
+
+  &:hover {
+    background-color: var(--color-primary-200);
   }
 }

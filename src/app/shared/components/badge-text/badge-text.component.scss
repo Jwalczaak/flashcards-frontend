@@ -1,6 +1,10 @@
 .purple {
-  border-radius: var(--border-radius-md);
   color: var(--color-secondary-800);
   background-color: color-mix(in srgb, var(--color-secondary-800) 15%, transparent);
+}
+
+.badge-text {
   opacity: 0.5;
+  border-radius: var(--border-radius-xmd);
+  padding: 3px 10px;
 }

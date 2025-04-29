@@ -28,6 +28,24 @@
           <span class="text-value-xs"> Here you can find your categories</span>
         </div>
       </div>
+
+      <div class="categories-list-header-buttons-container">
+        <app-shared-button
+          class="button"
+          [buttonType]="'action'"
+          [buttonText]="'Filters'"
+          [iconName]="'filter_list'"
+          [buttonColor]="'white'"
+        ></app-shared-button>
+
+        <app-shared-button
+          class="button"
+          [buttonType]="'action'"
+          [buttonText]="'Add Category'"
+          [iconName]="'add'"
+          [buttonColor]="'light-blue-gradient'"
+        ></app-shared-button>
+      </div>
     </header>
     <div class="actions-container">
       <div class="actions-table">
@@ -35,19 +53,18 @@
           <app-input [inputType]="'text'" [placeholder]="'Search'"></app-input>
         </div>
 
-        <div class="action-container">
-          <app-shared-button [buttonType]="'action'" [buttonText]="'filters'"></app-shared-button>
-        </div>
+        <div class="action-container"></div>
 
-        <div class="action-container">
-          <app-shared-button [buttonType]="'action'" [buttonText]="'configurations'"></app-shared-button>
-        </div>
+        <div class="action-container"></div>
       </div>
 
-      <div class="actions-add-category">
-        <div class="action-container">
-          <app-shared-button [buttonType]="'action'" [buttonText]="'Add category'"></app-shared-button>
-        </div>
+      <div class="action-container">
+        <app-shared-button
+          class="button"
+          [buttonType]="'action'"
+          [buttonText]="'Clear All'"
+          [buttonColor]="'white'"
+        ></app-shared-button>
       </div>
     </div>
     @if (categoriesData.status() === status.Resolved) {
