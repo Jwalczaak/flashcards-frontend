@@ -1,0 +1,27 @@
+<div class="dropdown" [class.open]="isOpen">
+  <div
+    class="dropdown-button"
+    tabindex="0"
+    (click)="toggleDropdown()"
+    (keydown.enter)="toggleDropdown()"
+    (keydown.space)="toggleDropdown()"
+  >
+    <span class="material-icons icon">{{ iconName() }}</span>
+    <span>{{ selectedValue?.name }}</span>
+    <i class="arrow"></i>
+  </div>
+  @if (isOpen) {
+    <div class="dropdown-menu">
+      @for (dropdownValue of dropdownValues(); track dropdownValue) {
+        <a
+          tabindex="0"
+          (click)="selectDropdownValue(dropdownValue)"
+          (keydown.enter)="toggleDropdown()"
+          (keydown.space)="toggleDropdown()"
+        >
+          {{ dropdownValue.name }}
+        </a>
+      }
+    </div>
+  }
+</div>

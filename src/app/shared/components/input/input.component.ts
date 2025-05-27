@@ -50,6 +50,6 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   onBlur(): void {
-    this.onTouch(); // Call onTouch when the user blurs the input
+    this.onTouch();
   }
 }
