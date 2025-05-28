@@ -54,7 +54,11 @@
         </div>
 
         <div class="action-container dropdown-container">
-          <app-dropdown [dropdownValues]="categoriesAvailableStatuses" [iconName]="'work'"></app-dropdown>
+          <app-dropdown
+            [dropdownValues]="categoriesAvailableStatuses"
+            [iconName]="'assignment'"
+            [isRemove]="true"
+          ></app-dropdown>
         </div>
 
         <div class="action-container"></div>

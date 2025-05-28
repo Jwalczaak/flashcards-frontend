@@ -6,14 +6,33 @@
     (keydown.enter)="toggleDropdown()"
     (keydown.space)="toggleDropdown()"
   >
-    <span class="material-icons icon">{{ iconName() }}</span>
-    <span>{{ selectedValue?.name }}</span>
-    <i class="arrow"></i>
+    <div class="dropdown-button-content">
+      <span class="material-symbols-outlined dropdown-icon-description icon">
+        {{ iconName() }}
+      </span>
+
+      <span class="text-value-sm-strong">{{ selectedValue?.name }}</span>
+    </div>
+    <div class="dropdown-button-actions">
+      @if (isRemove()) {
+        <span
+          tabindex="0"
+          class="material-symbols-outlined icon close-icon icon"
+          (click)="removeSelectedValue($event)"
+          (keydown.enter)="removeSelectedValue($event)"
+          (keydown.space)="removeSelectedValue($event)"
+          >close</span
+        >
+      }
+
+      <span class="material-symbols-outlined icon arrow-icon icon">keyboard_Arrow_Down</span>
+    </div>
   </div>
   @if (isOpen) {
     <div class="dropdown-menu">
       @for (dropdownValue of dropdownValues(); track dropdownValue) {
         <a
+          class="text-value-sm-strong"
           tabindex="0"
           (click)="selectDropdownValue(dropdownValue)"
           (keydown.enter)="toggleDropdown()"

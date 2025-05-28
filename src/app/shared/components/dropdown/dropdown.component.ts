@@ -9,6 +9,7 @@ import { Item } from '../../types/item.type';
 })
 export class DropdownComponent implements OnDestroy {
   iconName = input<string>();
+  isRemove = input<boolean>();
   dropdownValues = input.required<Item[]>();
 
   selectedValue: Item | undefined;
@@ -35,6 +36,11 @@ export class DropdownComponent implements OnDestroy {
   selectDropdownValue(dropdownValue: Item) {
     this.selectedValue = dropdownValue;
     this.isOpen = false;
+  }
+
+  removeSelectedValue(event: any): void {
+    event.stopPropagation();
+    this.selectedValue = undefined;
   }
 
   ngOnDestroy(): void {
