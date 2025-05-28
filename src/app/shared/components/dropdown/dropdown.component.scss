@@ -1,0 +1,77 @@
+@import "../../../../styles/mixins";
+
+.close-icon,
+.dropdown-icon-description {
+  font-size: 16px;
+  z-index: 99999;
+}
+
+.icon {
+  font-variation-settings: "wght" 400;
+}
+
+.arrow-icon {
+  font-variation-settings: "wght" 300;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+
+  &--open {
+    .dropdown-arrow {
+      transform: rotate(-135deg);
+    }
+  }
+
+  &-button {
+    @include flexbox(row, space-between, center, var(--spacing-sm));
+    height: calc(100% - 16px);
+    background-color: white;
+    @include border(all, var(--border-radius-lg), var(--color-primary-300));
+    padding: var(--spacing-md) var(--spacing-xmd);
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    gap: 6px;
+
+    &:hover {
+      @include border(all, var(--border-radius-lg), var(--color-secondary-200));
+    }
+
+    &-content {
+      @include flexbox(row, flex-start, center, var(--spacing-sm));
+    }
+
+    &-actions {
+      @include flexbox(row, flex-start, center, var(--spacing-sm));
+    }
+  }
+
+  &-menu {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    min-width: 120px;
+    z-index: 10;
+
+    a {
+      padding: 8px 12px;
+      display: block;
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
